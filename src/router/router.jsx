@@ -8,6 +8,7 @@ import Register from "../pages/home/Register/Register";
 import SignIn from "../pages/home/SignIn/SignIn";
 
 
+
     const router = createBrowserRouter([
       {
         path: "/",
@@ -24,7 +25,7 @@ import SignIn from "../pages/home/SignIn/SignIn";
             },
             {
                   path:'signin',
-                  element:<SignIn></SignIn>,
+                  element:<SignIn></SignIn>
             },
         ]
       },
