@@ -6,6 +6,10 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/home/Home";
 import Register from "../pages/home/Register/Register";
 import SignIn from "../pages/home/SignIn/SignIn";
+import JobDetails from "../pages/JobDetails/jobDetails";
+import PrivateRoute from "./PrivateRoute";
+import JobApply from "../pages/JobApply/JobApply";
+
 
 
 
@@ -20,6 +24,15 @@ import SignIn from "../pages/home/SignIn/SignIn";
                   element:<Home></Home>
             },
             {
+                  path:'/jobs/:id',
+                  element:<PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
+                  loader: ({params})=>fetch(`http://localhost:5000/jobs/${params.id}`)
+            },
+            {
+                  path:'/jobApply/:id',
+                  element:<PrivateRoute><JobApply></JobApply></PrivateRoute>
+            },
+            {
                   path:'register',
                   element:<Register></Register>
             },
@@ -27,6 +40,7 @@ import SignIn from "../pages/home/SignIn/SignIn";
                   path:'signin',
                   element:<SignIn></SignIn>
             },
+           
         ]
       },
     ]);
