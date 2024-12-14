@@ -9,6 +9,9 @@ import SignIn from "../pages/home/SignIn/SignIn";
 import JobDetails from "../pages/JobDetails/jobDetails";
 import PrivateRoute from "./PrivateRoute";
 import JobApply from "../pages/JobApply/JobApply";
+import MyApplication from "../pages/MyApplications/MyApplication";
+import AddJob from "../pages/AddJob/AddJob";
+import MyPostesJob from "../pages/MyPostesJob/MyPostesJob";
 
 
 
@@ -31,6 +34,18 @@ import JobApply from "../pages/JobApply/JobApply";
             {
                   path:'/jobApply/:id',
                   element:<PrivateRoute><JobApply></JobApply></PrivateRoute>
+            },
+            {
+                  path:'/addJob',
+                  element:<PrivateRoute><AddJob></AddJob></PrivateRoute>,
+            },
+            {
+                  path:'/myPostJob',
+                  element:<PrivateRoute><MyPostesJob></MyPostesJob></PrivateRoute>,
+            },
+            {
+                  path:'/myApplications',
+                  element:<PrivateRoute><MyApplication></MyApplication></PrivateRoute>
             },
             {
                   path:'register',
